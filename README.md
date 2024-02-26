@@ -18,7 +18,7 @@ Welcome to StellarShop! StellarShop is a cutting-edge e-commerce platform built 
 Before you begin, ensure you have Python and Django installed on your system. It's also recommended to use a virtual environment.
 
 1. **Clone the repository:**
-git clone https://github.com/zinmyoswe/Django-Ecommerce/tree/master
+git clone https://github.com/Arinzelight/Django-ecom-website
 cd StellarShop
 
 2. **Set up a Python virtual environment and activate it:**
@@ -47,4 +47,4 @@ Visit `http://localhost:8000` in your browser to see the application in action.
 
 ## Contributing
 
-Contributions to StellarShop are welcome! Please read our [Contributing Guidelines](CONTRIBUTING.md) for instructions on how to report issues, submit pull requests, and more.
+Contributions to StellarShop are welcome!
