@@ -3,6 +3,7 @@
   <div class="col-lg-6">
     <div class="box-element" id="form-wrapper">
       <form id="form">
+        {% csrf_token %}
         <div id="user-info">
           <div class="form-field">
             <input
@@ -101,13 +102,13 @@
           <img class="row-image" src="{{item.product.imageURL}}" />
         </div>
         <div style="flex: 2"><p>{{item.product.name}}</p></div>
-        <div style="flex: 1"><p>${{item.product.price}}</p></div>
+        <div style="flex: 1"><p>₦{{item.product.price}}</p></div>
         <div style="flex: 1"><p>x{{item.quantity}}</p></div>
       </div>
       {% endfor %}
 
       <h5>Items: {{order.get_cart_items}}</h5>
-      <h5>Total: ${{order.get_cart_total|floatformat:2}}</h5>
+      <h5>Total: ₦{{order.get_cart_total|floatformat:2}}</h5>
     </div>
   </div>
 </div>
@@ -129,6 +130,9 @@
   }
 
   const form = document.getElementById("form");
+
+  csrftoken = form.getElementsByTagName("input")[0].value
+  console.log("Newtoken:", form.getElementsByTagName("input")[0].value)
 
   form.addEventListener("submit", function (e) {
     e.preventDefault();
@@ -183,6 +187,10 @@
       .then((data) => {
         console.log("Success:", data);
         alert("Transaction completed");
+
+      cart = {}
+      document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+  
         window.location.href = "{% url 'store' %}";
       });
   }
