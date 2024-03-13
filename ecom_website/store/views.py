@@ -4,6 +4,8 @@ import json
 import datetime
 from .models import *
 from .utils import cookieCart, cartData, guestOrder
+import os
+
 
 # Create your views here.
 
@@ -24,13 +26,22 @@ def cart(request):
     context = {'items':items, 'order':order,  'cartItems': cartItems}
     return render(request, 'store/cart.html', context)
 
+
 def checkout(request):
     data = cartData(request)
     cartItems = data['cartItems']
     order = data['order']
     items = data['items'] 
 
-    context = {'items':items, 'order':order, 'cartItems': cartItems}
+    # Retrieve PayPal client ID from environment variables
+    paypal_client_id = os.getenv('PAYPAL_CLIENT_ID')
+
+    context = {
+        'items': items,
+        'order': order,
+        'cartItems': cartItems,
+        'paypal_client_id': paypal_client_id,  # Pass PayPal client ID to template context
+    }
     return render(request, 'store/checkout.html', context)
 
 
