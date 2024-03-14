@@ -202,6 +202,11 @@
       userFormData.email = form.email.value;
     }
 
+    // Retrieve CSRF token from the form
+    const csrftoken = document.querySelector(
+      "[name=csrfmiddlewaretoken]"
+    ).value;
+
     const url = "/process_order/";
     fetch(url, {
       method: "POST",
