@@ -31,6 +31,12 @@ h1,h2,h3,h4,h5,h6{
 	background-color: #4f868c!important;
 }
 
+.logo{
+	border: 1px solid rgb(45, 102, 111);
+	font-weight: 400;
+	padding: 4px;
+}
+
 #cart-icon{
 	width:25px;
 	display: inline-block;
