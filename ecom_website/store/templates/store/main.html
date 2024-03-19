@@ -38,18 +38,17 @@
       }
       var csrftoken = getToken("csrftoken");
 
-
       function getCookie(name) {
         // Split cookie string and get all individual name=value pairs in an array
         var cookieArr = document.cookie.split(";");
 
         // Loop through the array elements
-        for(var i = 0; i < cookieArr.length; i++) {
+        for (var i = 0; i < cookieArr.length; i++) {
           var cookiePair = cookieArr[i].split("=");
 
           /* Removing whitespace at the beginning of the cookie name
           and compare it with the given string */
-          if(name == cookiePair[0].trim()) {
+          if (name == cookiePair[0].trim()) {
             // Decode the cookie value and return
             return decodeURIComponent(cookiePair[1]);
           }
@@ -57,18 +56,18 @@
         // Return null if not found
         return null;
       }
-      var cart = JSON.parse(getCookie('cart'))
-      if(cart == undefined){
-        cart = {}
-        console.log('Cart was created!')
-        document.cookie = 'cart=' + JSON.stringify(cart) + ";domain=;path=/"
+      var cart = JSON.parse(getCookie("cart"));
+      if (cart == undefined) {
+        cart = {};
+        console.log("Cart was created!");
+        document.cookie = "cart=" + JSON.stringify(cart) + ";domain=;path=/";
       }
-      console.log('Cart:', cart)
+      console.log("Cart:", cart);
     </script>
   </head>
   <body>
     <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-      <a class="navbar-brand" href="{% url 'store' %}">StellarShop</a>
+      <a class="navbar-brand logo" href="{% url 'store' %}">StellarShop</a>
       <button
         class="navbar-toggler"
         type="button"
@@ -83,11 +82,7 @@
 
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link" href="{% url 'store' %}"
-              >Store <span class="sr-only">(current)</span></a
-            >
-          </li>
+          <li class="nav-item active"></li>
         </ul>
         <div class="form-inline my-2 my-lg-0">
           <a href="#" class="btn btn-warning">Login</a>
