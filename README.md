@@ -1,5 +1,7 @@
 # StellarShop
 
+![StellarShop](/ecom_website/static/images/StellarShop.png)
+
 Welcome to StellarShop! StellarShop is a cutting-edge e-commerce platform built with Django, designed to empower merchants by providing a robust, intuitive, and scalable online storefront. Our platform is equipped with a suite of tools enabling vendors to create customized and compelling shopping experiences for their customers.
 
 ## Features
@@ -18,30 +20,30 @@ Welcome to StellarShop! StellarShop is a cutting-edge e-commerce platform built 
 Before you begin, ensure you have Python and Django installed on your system. It's also recommended to use a virtual environment.
 
 1. **Clone the repository:**
-git clone https://github.com/Arinzelight/Django-ecom-website
-cd StellarShop
+   git clone https://github.com/Arinzelight/Django-ecom-website
+   cd StellarShop
 
 2. **Set up a Python virtual environment and activate it:**
-python -m venv venv
-source venv/bin/activate # On Windows use venv\Scripts\activate
+   python -m venv venv
+   source venv/bin/activate # On Windows use venv\Scripts\activate
 
 3. **Install the required packages:**
-pip install -r requirements.txt
+   pip install -r requirements.txt
 
 4. **Set up environment variables:**
-Rename `env.example` to `.env` and fill in the necessary Django settings, database configurations, and any other environment-specific variables.
+   Rename `env.example` to `.env` and fill in the necessary Django settings, database configurations, and any other environment-specific variables.
 
 5. **Run migrations to create the database schema:**
-python manage.py migrate
+   python manage.py migrate
 
 6. **Create a superuser to access the Django admin interface:**
-python manage.py createsuperuser
+   python manage.py createsuperuser
 
 7. **Collect static files (if in production):**
-python manage.py collectstatic
+   python manage.py collectstatic
 
 8. **Start the Django development server:**
-python manage.py runserver
+   python manage.py runserver
 
 Visit `http://localhost:8000` in your browser to see the application in action.
 
